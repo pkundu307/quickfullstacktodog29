@@ -5,7 +5,7 @@ const JWT_SECRET = process.env.secretKey || "secretkey";
 
 export const protect = async (req, res, next) => {
   try {
-    console.log("Auth Middleware Invoked");
+    // console.log("Auth Middleware Invoked");
     
     const auth = req.headers
     console.log(auth);
@@ -14,8 +14,8 @@ export const protect = async (req, res, next) => {
     //   return res.status(401).json({ message: "No token provided" });
 
     const token = auth.authorization.split(" ")[1];
-    console.log(token);
-    console.log(JWT_SECRET);
+    // console.log(token);
+    // console.log(JWT_SECRET);
     
     const decoded = jwt.verify(token, JWT_SECRET);
     console.log(token,'./././.');
