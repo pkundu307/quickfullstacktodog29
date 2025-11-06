@@ -10,7 +10,9 @@ dotenv.config();
 
 const server = express();
 
-server.use(cors());
+server.use(cors(
+ { origin: 'http://localhost:5174' }
+));// Enable CORS for all routes cross origin resource sharing
 server.use(bodyParser.json());
 server.use('/api/auth', authRoutes);
 server.use('/api/todos', todoRoutes);
